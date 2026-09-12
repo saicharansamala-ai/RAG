@@ -58,8 +58,10 @@ Basic-RAG/
 ├── .gitignore
 │
 └── data/
-    └── Attention.pdf
+    └── your-file.pdf
 ```
+
+> **Note:** The `data/` folder is not included in this repo. Create it and add your own PDF before running `create_index.py`.
 
 ## Setup
 
@@ -90,19 +92,23 @@ Basic-RAG/
 
 ## Usage
 
-1. Build the vector index from your PDF(s) in `data/`
+1. Add your PDF
+
+   Create a `data/` folder in the project root and place your PDF inside it (e.g. `data/your-file.pdf`).
+
+2. Build the vector index from your PDF(s) in `data/`
 
    ```bash
    python create_index.py
    ```
 
-2. Run the chatbot
+3. Run the chatbot
 
    ```bash
    python app.py
    ```
 
-3. Ask a question when prompted, and the app will retrieve relevant chunks from the PDF and generate an answer using Groq, along with the source passages it used.
+4. Ask a question when prompted, and the app will retrieve relevant chunks from the PDF and generate an answer using Groq, along with the source passages it used.
 
 ## Example
 
@@ -120,5 +126,5 @@ Sources:
 
 ## Notes
 
-- Swap in your own PDF by replacing `data/Attention.pdf` and re-running `create_index.py`.
+- Swap in a different PDF anytime by replacing the file in `data/` and re-running `create_index.py`.
 - Adjust the similarity threshold in the retrieval step to control how strict the context matching is.
